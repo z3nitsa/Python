@@ -1,0 +1,43 @@
+1
+print('Как вас зовут')
+name = str(input())
+print('Здравствуйте, ', name)
+
+2
+print('Введите длину')
+length = float(input())
+print('Введите ширину')
+width = float(input())
+print('Площадь равна', length*width)
+
+3
+print('Введите число n')
+n = int(input())
+a = ((1+n)*n)/2
+print ('Сумма всех чисел до n равна', a)
+
+4
+print('Введите кол-во часов')
+a = int(input())
+print('Введите кол-во минут')
+b = int(input())
+print('Введите кол-во секунд')
+c = int(input())
+d = a*3600 + b*60 + c
+print('Это', d,'секунд')
+
+5
+print('Введите вес')
+a = float(input())
+print('Введите рост')
+b = float(input())/100
+print('Ваш индекс массы тела равен', a/(b*b))
+
+6
+print('Введите целое число')
+a = int(input())
+b = 0
+while(a != 0):
+    b = b + a % 10
+    a = a // 10
+print('Сумма цифр этого числа равна', b)
