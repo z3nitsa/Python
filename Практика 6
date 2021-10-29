@@ -1,0 +1,36 @@
+1
+a = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6]]
+def nested_sum(a):
+    b = 0
+    for i in a:
+        b += sum(i)
+    return b 
+print(nested_sum(a))
+
+2
+a = [1, 2, 3, 4]
+def cumsum(a):
+    b = 0
+    for i in a:
+        b += i
+        yield b
+print(list(cumsum(a)))
+ 
+3
+a = [1, 2, 3, 5, 6, 4]
+def middle(a):
+    a.pop()
+    a.reverse()
+    a.pop()
+    a.reverse()
+    return a
+print(middle(a))
+
+4
+a = [1, 2, 3, 5, 6, 4]
+def chop(a):
+    a.pop()
+    a.reverse()
+    a.pop()
+    a.reverse()
+print(chop(a))
