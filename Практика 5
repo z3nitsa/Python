@@ -1,0 +1,90 @@
+1
+a = [int(i) for i in input("Введи список ").split()]
+b = int(input("Введи число "))
+def large (a = []):
+    a.sort(reverse=True)
+    s = []
+    for i in range(len(a)):
+        if a[i] > b:
+            s.append(a[i])
+    return s
+print(large(a))
+
+3
+surname = (str(input("Введи фамилию ")))
+name = (str(input("Введи имя ")))
+patronymic = (str(input("Введи отчество ")))
+print("ФИО = ",(surname[0]+"."),(name[0]+"."),(patronymic[0]+"."))
+
+4
+import random
+print("Игра---Угадай Столицу(Европа)")
+print("Если хочешь остановиться, вместо ответа напиши Stop")
+print("")
+city = dict(
+ Austria = 'Vienna',
+ Belarus = 'Minsk',
+ Belgium = 'Brussels',
+ Bulgaria = 'Sofia',
+ Vatican = 'Vatican',
+ Hungary = 'Budapest',
+ Great_Britain = 'London',
+ Germany = 'Berlin',
+ Russia = 'Moscow',
+ Ukraine = 'Kiev',
+ Finland = 'Helsinki',
+ France = 'Paris',
+ Montenegro = 'Podgorica',
+ Czech_Republic = 'Prague',
+ Croatia = 'Zagreb',
+ Switzerland = 'Bern',
+ Sweden = 'Stockholm',
+ Estonia = 'Tallinn')
+counter = 0
+praviln = 0
+restart = True
+while restart:
+    country, capital = random.choice(list(city.items()))
+    print(country)
+    answer = str(input("Введи Ответ "))
+    if answer == capital:
+        print("Молодец!")
+        praviln+=1
+    elif answer == 'Stop':
+        restart = False
+        break
+    else:
+        print("Попробуй ещё!")
+        counter+=1
+    print("Правильные","Неправильные")
+    print("    ",praviln,"        ",counter)
+    print("                         ")
+
+5
+def glas(a):
+    counter=0
+    for i in range(len(a)+1):
+        if a[i-1] == 'a' or a[i-1] == 'у' or a[i-1] == 'о' or a[i-1] == 'ы' or a[i-1] == 'э' or a[i-1] == 'я' or a[i-1] == 'ю' or a[i-1] == 'ё' or a[i-1] == 'е' or a[i-1] == 'и':
+            counter+=1
+    return counter
+
+def sogl(b):
+    caunter=0
+    for i in range(len(b)+1):
+        if b[i-1] == 'б' or b[i-1] == 'в' or b[i-1] == 'г' or b[i-1] == 'д' or b[i-1] == 'ж' or b[i-1] == 'з' or b[i-1] == 'й' or b[i-1] == 'к' or b[i-1] == 'л' or b[i-1] == 'м' or b[i-1] == 'н' or b[i-1] == 'п' or b[i-1] == 'р' or b[i-1] == 'с' or b[i-1] == 'т' or b[i-1] == 'ф' or b[i-1] == 'х' or b[i-1] == 'ц' or b[i-1] == 'ч' or b[i-1] == 'ш' or b[i-1] == 'щ':
+            caunter+=1
+    return caunter
+inp = str(input("Введите строку без заглавных букв "))
+glas_or_sogl = str(input('Выберите, количество каких букв вы хотели бы получить(согласные, гласные)   '))
+
+if glas_or_sogl == "Согласные" or "согласные":
+    print(sogl(inp))
+elif glas_or_sogl == "гласные" or "Гласные":
+   print(glas(inp))
+
+6
+string = input()
+f = {}
+for i in string:
+  f[i] = f.get(i,0) + 1
+print(f)
