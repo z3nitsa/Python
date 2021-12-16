@@ -1,0 +1,57 @@
+1
+
+def fibonacci(a):
+  if a == 0:
+    return 0
+  if a == 1 or a == 2:
+    return 1
+  else:
+    return fibonacci(n-1)+fibonacci(n-2)
+
+2
+Время, необходимое для вычисления fib (n), равно сумме времени, необходимого для вычисления fib (n-1) и fib (n-2). 
+Это также включает постоянное время для выполнения предыдущего сложения.
+
+При решении приведенного рекурсивного уравнения мы получаем верхнюю границу Фибоначчи как 
+
+3
+
+def fibonacci2(a):
+  mem = {}
+  if a in mem:
+    return mem[a]
+  if a == 0:
+    return 0
+  if a == 1 or a == 2:
+    return 1
+  else:           
+    b =  fibonacci(n-1) + fibonacci(n-2)
+    mem[a] = b
+  return b
+  
+5
+
+def fib_cycle(x):
+  a = 1
+  b = 1
+  i = 0
+  while i < x - 2:
+    sum = a + b
+    a = b
+    b = sum
+    i = i + 1
+  print(b)
+  
+  6
+  
+  def poisk(a, low, high, b):
+  if low<=high and b >= a[low] and b <= a[high]:
+    c = low + ((high - low)//(a[high] - a[low])*(b - a[low]))
+    if a[c] == b:
+      return c
+    if a[c] < b:
+      return poisk(arr, c + 1, high, b)
+    if a[c] > b:
+      return poisk(a, low, c - 1, b)
+  rerurn -1
+
